@@ -1,25 +1,21 @@
 package com.benjiman.main;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Main {
 
-
-
     public static <I0Exception extends Throwable> void main(String[] args) {
 
         // try block for the serverSocket
 
-        try(ServerSocket serverSocket = new ServerSocket(5000)) {
+        try(ServerSocket serverSocket = new ServerSocket(6000)) {
             Socket socket = serverSocket.accept();
             System.out.println("Client Connected");
             BufferedReader input = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
+            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
 
             // Create an Infinite loop for reading the data from the client
 
