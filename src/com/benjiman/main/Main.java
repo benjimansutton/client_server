@@ -11,22 +11,15 @@ public class Main {
         // try block for the serverSocket
 
         try(ServerSocket serverSocket = new ServerSocket(6000)) {
-            Socket socket = serverSocket.accept();
-            System.out.println("Client Connected");
-            BufferedReader input = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
-            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
+
 
             // Create an Infinite loop for reading the data from the client
 
-            while(true) {
-                String echoString = input.readLine();
-                if(echoString.equals("exit")) {
-                    break;  // Breaks out of the infinite loop
-                }
-                output.println("Echo from server: " + echoString);
-            }
+            // While loop to link to the Echoer class
 
+            while(true) {
+                new Echoer(serverSocket.accept()).start();
+            }
             // Catch block to get the exceptions
 
         } catch(IOException e) {
