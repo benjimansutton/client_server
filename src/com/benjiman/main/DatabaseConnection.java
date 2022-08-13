@@ -20,10 +20,9 @@ public class DatabaseConnection {
     private Connection connect() {
         // SQLite connection string
         // Database location on my Computer
-        String url = PATH_TO_DATABASE;
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(url);
+            conn = DriverManager.getConnection(PATH_TO_DATABASE);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -131,6 +130,130 @@ public class DatabaseConnection {
         }
     }
 
+
+    // Will show the Number of the Trooper & Water Level
+    public static void showWater(){
+        try {
+            Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            statement.execute("SELECT number, water FROM inventory");
+            ResultSet results = statement.getResultSet();
+            while (results.next()) {
+                System.out.println(" WATER COUNT FOR TROOP NUMBER " +
+                        results.getInt("number") + " WILL LAST " +
+                        results.getInt("water") + " DAYS ");
+            }
+            results.close();
+            statement.close();
+            conn.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Something went wrong: " + e.getMessage());
+        }
+    }
+
+    // Update the Ammo Level of the Trooper set to base of 360
+    public static void ammoUpdate() {
+        try {
+            Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            statement.execute("UPDATE " + TABLE_INVENTORY + " SET " + COLUMN_AMMO + "=360 + ammo");
+            statement.close();
+            conn.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Something went wrong: " + e.getMessage());
+        }
+    }
+
+
+    // Remove Ammo per 30 rounds - Each trooper must fire a minimum of 30 Rounds per Firing Exercise
+    public static void ammoRemove() {
+        try {
+            Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            Statement.execute("UPDATE" + TABLE_INVENTORY + " SET " + COLUMN_AMMO + " =ammo - 30");
+
+            statement.close();
+            conn.close();
+        }
+        catch (SQLException e) {
+            int SQLErrorCode = e.getErrorCode();
+            if (SQLErrorCode == 180) {
+                System.out.println("You need ammo");
+            }
+        }
+    }
+
+
+    // Update the Food Level for the Trooper, set to base of 3 days
+    public static void foodUpdate() {
+        try {
+            Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            statement.execute("UPDATE " + TABLE_INVENTORY + " SET " + COLUMN_FOOD + "=3 + food");
+
+            statement.close();
+            conn.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Something went wrong: " + e.getMessage());
+            System.out.println("Something went wrong: " + e.getErrorCode());
+        }
+    }
+
+
+    // Remove Food Level by 1 day at a time
+    public static void foodRemove() {
+        try {
+            Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            statement.execute("UPDATE " + TABLE_INVENTORY + " SET " + COLUMN_FOOD + " =food - 1");
+
+            statement.close();
+            conn.close();
+        }
+        catch (SQLException e) {
+            int SQLErrorCode = e.getErrorCode();
+            if (SQLErrorCode == 3) {
+                System.out.println("You need food");
+            }
+        }
+    }
+
+    // Update the water Level for the Trooper, set to base of 10L
+    public static void waterUpdate() {
+        try {
+            Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            statement.execute("UPDATE " + TABLE_INVENTORY + " SET " + COLUMN_WATER + "=10 + water");
+            statement.close();
+            conn.close();
+        }
+        catch (SQLException e) {
+            System.out.println("Something went wrong: " + e.getMessage());
+            System.out.println("Something went wrong: " + e.getErrorCode());
+        }
+    }
+
+
+    // Remove Water Level by 2 Liter at a time
+    public static void waterRemove() {
+        try {
+            Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
+            Statement statement = conn.createStatement();
+            statement.execute("UPDATE " + TABLE_INVENTORY + " SET " + COLUMN_WATER + " =water - 2");
+
+            statement.close();
+            conn.close();
+        }
+        catch (SQLException e) {
+            int SQLErrorCode = e.getErrorCode();
+            if (SQLErrorCode == 6) {
+                System.out.println("You need water");
+            }
+        }
+    }
 
 
 }
