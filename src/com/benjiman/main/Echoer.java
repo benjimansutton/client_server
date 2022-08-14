@@ -18,6 +18,8 @@ public class Echoer extends Thread {
     @Override
     public void run() {
 
+
+        int counter = 0;
         // Try block to capture input from the user
         try {
             BufferedReader input = new BufferedReader(
@@ -26,17 +28,25 @@ public class Echoer extends Thread {
 
 
             // While if loop to break out of the loop with the exit input
+            int echoString;
             while(true) {
-                String echoString = input.readLine();
+                // This changes the input from string to int left the original below
+                echoString = Integer.parseInt(input.readLine());
+//                String echoString = input.readLine();
+                DataBeDeleted app = new DataBeDeleted();
                 System.out.println("Received client input: " + echoString);
-                if(echoString.equals("exit")) {
-                    break;
-                }
 
-//                counter = instanceCounter;
+//                echoString = Integer.parseInt(input.readLine());
+//                System.out.println("Received client input: " + echoString);
+
+//                if(echoString.equals("exit")) {
+//                    break;
+//                }
+
+                counter = instanceCounter;
 
                 if(echoString == 1) {
-//                    instanceCounter++;
+                    instanceCounter++;
                     System.out.println("You've started the sim and have been issued your initial kit");
 
                     DatabaseConnection dbc = new DatabaseConnection();
@@ -52,32 +62,32 @@ public class Echoer extends Thread {
 
                 }
                 if(echoString == 2) {
-//                    instanceCounter++;
+                    instanceCounter++;
 
                     DatabaseConnection.showAmmo();
                 }
                 if(echoString == 3) {
-//                    instanceCounter++;
+                    instanceCounter++;
 
                     DatabaseConnection.showFood();
                 }
                 if(echoString == 4) {
-//                    instanceCounter++;
+                    instanceCounter++;
 
                     DatabaseConnection.showWater();
                 }
                 if(echoString == 5) {
-//                    instanceCounter++;
+                    instanceCounter++;
 
                     DatabaseLocationCoords.showCurrentLocation();
                 }
                 if(echoString == 6) {
-//                    instanceCounter++;
+                    instanceCounter++;
 
                     DatabaseLocationCoords.currentLocationUpdate();
                     DatabaseConnection.foodRemove();
                     DatabaseConnection.waterRemove();
-                    Database.showLocation();
+//                    DatabaseLocationCoords.showLocation();
                     System.out.println(" Game counter " + instanceCounter);
                     // rations at 0 need rations to move
 
@@ -93,19 +103,19 @@ public class Echoer extends Thread {
 
                 if(instanceCounter >= 20 ) {
                     System.out.println("You lost try again");
-                    app.delete(1);
-                    app.deleteEA(1);
+                    app.deleteIN(1);
+                    app.deleteLC(1);
 
 
                     System.exit(0);
                 }
 
                 if (echoString == 0) {
-                    app.delete(1);
+                    app.deleteIN(1);
 //                    app.delete(2);
 //                    app.delete(3);
 //                    app.delete(4);
-                    app.deleteEA(1);
+                    app.deleteLC(1);
 //                    app.deleteEA(2);
 //                    app.deleteEA(3);
 //                    app.deleteEA(4);

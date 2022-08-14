@@ -26,7 +26,7 @@ public class DatabaseLocationCoords {
     }
 
     public void insert(int number, int current_location, int previous_location) {
-        String sql = "INSERT INTO exercise_area(troop_id, exercise_location) VALUES(?,?)";
+        String sql = "INSERT INTO location_coords(number, current_location) VALUES(?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, number);
@@ -52,7 +52,7 @@ public class DatabaseLocationCoords {
         catch (SQLException e) {
             int SQLErrorCode = e.getErrorCode();
             if(SQLErrorCode == 19) {
-                System.out.println("You've completed the game "  + "in " + EchoerOld.instanceCounter + " moves " + "Exiting...");
+                System.out.println("You've completed the game "  + "in " + Echoer.instanceCounter + " moves " + "Exiting...");
                 System.exit(0);
             }
         }
@@ -70,7 +70,7 @@ public class DatabaseLocationCoords {
         catch (SQLException e) {
             int SQLErrorCode = e.getErrorCode();
             if(SQLErrorCode == 19) {
-                System.out.println("You've completed the game "  + "in " + EchoerOld.instanceCounter + " moves " + "Exiting...");
+                System.out.println("You've completed the game "  + "in " + Echoer.instanceCounter + " moves " + "Exiting...");
                 System.exit(0);
             }
         }
@@ -89,7 +89,7 @@ public class DatabaseLocationCoords {
         catch (SQLException e) {
             int SQLErrorCode = e.getErrorCode();
             if(SQLErrorCode == 19) {
-                System.out.println("You've completed the game "  + "in " + EchoerOld.instanceCounter + " moves " + "Exiting...");
+                System.out.println("You've completed the game "  + "in " + Echoer.instanceCounter + " moves " + "Exiting...");
                 System.exit(0);
             }
         }

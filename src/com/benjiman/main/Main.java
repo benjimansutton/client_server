@@ -9,19 +9,18 @@ public class Main {
     public static <I0Exception extends Throwable, Database> void main(String[] args) {
 
         //Initialising Inventory Database on startup
-        DatabaseConnection dbc = new DatabaseConnection();
-        dbc.insert(1, 0, 0, 0.0,);
-        dbc.insert(2, 0, 0, 0.0,);
-        dbc.insert(3, 0, 0, 0.0,);
-        dbc.insert(4, 0, 0, 0.0,);
+            DatabaseConnection dbc = new DatabaseConnection();
+            dbc.insert(1, 0, 0, 0.0);
+            dbc.insert(2, 0, 0, 0.0);
+            dbc.insert(3, 0, 0, 0.0);
+            dbc.insert(4, 0, 0, 0.0);
 
-        // Initializing Location Coords database on startup
-        DatabaseLocationCoords dblc = new DatabaseLocationCoords();
-        dblc.insert(1,0,0);
-        dblc.insert(2,0,0);
-        dblc.insert(3,0,0);
-        dblc.insert(4,0,0);
-
+            // Initializing Location Coords database on startup
+            DatabaseLocationCoords dblc = new DatabaseLocationCoords();
+            dblc.insert(1, 0, 0);
+            dblc.insert(2, 0, 0);
+            dblc.insert(3, 0, 0);
+            dblc.insert(4, 0, 0);
         // try block for the serverSocket
 
         try(ServerSocket serverSocket = new ServerSocket(6000)) {

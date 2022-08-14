@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea440497-cb25-4e47-8958-f6fe709a6f7e" name="Changes" comment="Add remove methods &amp; update methods">
-      <change afterPath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseLocationCoords.java" afterDir="false" />
+    <list default="true" id="ea440497-cb25-4e47-8958-f6fe709a6f7e" name="Changes" comment="Add if statements and connections from Server to Client for interactive">
+      <change afterPath="$PROJECT_DIR$/src/com/benjiman/main/DataBeDeleted.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EchoServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EchoServer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TroopTrackerMain.db" beforeDir="false" afterPath="$PROJECT_DIR$/TroopTrackerMain.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseLocationCoords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseLocationCoords.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/Echoer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/Echoer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/Main.java" afterDir="false" />
     </list>
@@ -37,14 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "configurable.group.editor"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.benjiman.main.Main" />
@@ -123,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660382793141</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add if statements and connections from Server to Client for interactive">
+      <created>1660463629792</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660463629792</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +160,7 @@
     <MESSAGE value="End of day" />
     <MESSAGE value="Add methods for show (Status, Number, Ammo &amp; Food Levels) also constants for table" />
     <MESSAGE value="Add remove methods &amp; update methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add remove methods &amp; update methods" />
+    <MESSAGE value="Add if statements and connections from Server to Client for interactive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add if statements and connections from Server to Client for interactive" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.benjiman.main;
 
 import java.sql.*;
+import org.sqlite.JDBC;
 
 public class DatabaseConnection {
 
@@ -31,7 +32,7 @@ public class DatabaseConnection {
 
     // Method to set the table headers & setting int & doubles on the table
     public void insert(int number, int ammo, int food, double water) {
-        String sql = "INSERT INTO troop(id, ammo, rations, water, location) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO inventory(number, ammo, food, water) VALUES(?,?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, number);
@@ -51,7 +52,7 @@ public class DatabaseConnection {
             // Will print the whole Database to show the columns
             Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
-            statement.execute("SELECT * FROM troop");
+            statement.execute("SELECT * FROM inventory");
             ResultSet results = statement.getResultSet();
             while (results.next()) {
                 System.out.println(results.getInt("number") + " " +
@@ -172,7 +173,7 @@ public class DatabaseConnection {
         try {
             Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
-            Statement.execute("UPDATE" + TABLE_INVENTORY + " SET " + COLUMN_AMMO + " =ammo - 30");
+            statement.execute("UPDATE" + TABLE_INVENTORY + " SET " + COLUMN_AMMO + " =ammo - 30");
 
             statement.close();
             conn.close();
