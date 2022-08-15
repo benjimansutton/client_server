@@ -26,7 +26,7 @@ public class DatabaseLocationCoords {
     }
 
     public void insert(int number, int current_location, int previous_location) {
-        String sql = "INSERT INTO location_coords(number, current_location) VALUES(?,?)";
+        String sql = "INSERT INTO location_coords(number, current_location, previous_location) VALUES(?,?,?)";
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, number);

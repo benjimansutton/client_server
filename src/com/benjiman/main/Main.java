@@ -10,20 +10,21 @@ public class Main {
 
         //Initialising Inventory Database on startup
             DatabaseConnection dbc = new DatabaseConnection();
-            dbc.insert(1, 0, 0, 0.0);
-            dbc.insert(2, 0, 0, 0.0);
-            dbc.insert(3, 0, 0, 0.0);
-            dbc.insert(4, 0, 0, 0.0);
+            dbc.insert(1, 180, 3, 15.0);
+            dbc.insert(2, 180, 3, 15.0);
+            dbc.insert(3, 180, 3, 15.0);
+            dbc.insert(4, 180, 3, 15.0);
 
-            // Initializing Location Coords database on startup
-            DatabaseLocationCoords dblc = new DatabaseLocationCoords();
-            dblc.insert(1, 0, 0);
-            dblc.insert(2, 0, 0);
-            dblc.insert(3, 0, 0);
-            dblc.insert(4, 0, 0);
-        // try block for the serverSocket
+//            // Initializing Location Coords database on startup
+//            DatabaseLocationCoords dblc = new DatabaseLocationCoords();
+//            dblc.insert(1, 0, 0);
+//            dblc.insert(2, 0, 0);
+//            dblc.insert(3, 0, 0);
+//            dblc.insert(4, 0, 0);
 
-        try(ServerSocket serverSocket = new ServerSocket(6000)) {
+
+            // try block for the serverSocket
+        try(ServerSocket serverSocket = new ServerSocket(6001)) {
 
             // While loop to link to the Echoer class
 
