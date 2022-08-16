@@ -96,7 +96,7 @@ public class DatabaseConnection {
             statement.execute("SELECT number, ammo FROM inventory");
             ResultSet results = statement.getResultSet();
             while (results.next()) {
-                System.out.println(" AMMO COUNT FOR TROOP NUMBER " +
+                System.out.println(" AMMO COUNT FOR TROOPER NUMBER " +
                         results.getInt("number") + " IS " +
                         results.getInt("ammo") + " ROUNDS ");
             }
@@ -118,7 +118,7 @@ public class DatabaseConnection {
             statement.execute("SELECT number, food FROM inventory");
             ResultSet results = statement.getResultSet();
             while (results.next()) {
-                System.out.println(" FOOD FOR TROOP NUMBER " +
+                System.out.println(" FOOD FOR TROOPER NUMBER " +
                         results.getInt("number") + " WILL LAST " +
                         results.getInt("food") + " DAYS ");
             }
@@ -140,7 +140,7 @@ public class DatabaseConnection {
             statement.execute("SELECT number, water FROM inventory");
             ResultSet results = statement.getResultSet();
             while (results.next()) {
-                System.out.println(" WATER COUNT FOR TROOP NUMBER " +
+                System.out.println(" WATER COUNT FOR TROOPER NUMBER " +
                         results.getInt("number") + " WILL LAST " +
                         results.getInt("water") + " DAYS ");
             }
@@ -173,7 +173,7 @@ public class DatabaseConnection {
         try {
             Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
-            statement.execute("UPDATE" + TABLE_INVENTORY + " SET " + COLUMN_AMMO + " =ammo - 30");
+            statement.execute("UPDATE" + TABLE_INVENTORY + " SET " + COLUMN_AMMO + " =ammo - 60");
 
             statement.close();
             conn.close();
@@ -238,12 +238,12 @@ public class DatabaseConnection {
     }
 
 
-    // Remove Water Level by 2 Liter at a time
+    // Remove Water Level by 5 Liters at a time
     public static void waterRemove() {
         try {
             Connection conn = DriverManager.getConnection(PATH_TO_DATABASE);
             Statement statement = conn.createStatement();
-            statement.execute("UPDATE " + TABLE_INVENTORY + " SET " + COLUMN_WATER + " =water - 2");
+            statement.execute("UPDATE " + TABLE_INVENTORY + " SET " + COLUMN_WATER + " =water - 5");
 
             statement.close();
             conn.close();

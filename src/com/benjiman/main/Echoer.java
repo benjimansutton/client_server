@@ -13,13 +13,11 @@ public class Echoer extends Thread {
         this.socket = socket;
     }
 
-    static int instanceCounter = 0;
-
     @Override
     public void run() {
 
 
-        int counter = 0;
+        int miles = 1;
         // Try block to capture input from the user
         try {
             BufferedReader input = new BufferedReader(
@@ -43,10 +41,8 @@ public class Echoer extends Thread {
 //                    break;
 //                }
 
-                counter = instanceCounter;
 
                 if(echoString == 1) {
-                    instanceCounter++;
                     System.out.println("You've started the sim and have been issued your initial kit");
 
                     DatabaseConnection dbc = new DatabaseConnection();
@@ -57,57 +53,39 @@ public class Echoer extends Thread {
 
                     DatabaseConnection.showStatus();
 
-                    System.out.println("Your Objective is to travel 1Km in the least moves possible.. Good Luck!");
+                    System.out.println("Your Objective is to travel 10 Mile in the least moves possible.. Good Luck!");
 
 
                 }
                 if(echoString == 2) {
-                    instanceCounter++;
-
+                    miles++;
+//                    DatabaseConnection.showNumber();
                     DatabaseConnection.showAmmo();
-                }
-                if(echoString == 3) {
-                    instanceCounter++;
-
                     DatabaseConnection.showFood();
-                }
-                if(echoString == 4) {
-                    instanceCounter++;
-
                     DatabaseConnection.showWater();
                 }
-                if(echoString == 5) {
-                    instanceCounter++;
-
-                    DatabaseLocationCoords.showCurrentLocation();
-                }
-                if(echoString == 6) {
-                    instanceCounter++;
-
-                    DatabaseLocationCoords.currentLocationUpdate();
+                if(echoString == 3) {
+                    miles++;
+                    System.out.println("You have moved 1 mile.");
                     DatabaseConnection.foodRemove();
                     DatabaseConnection.waterRemove();
+                    DatabaseConnection.ammoRemove();
 //                    DatabaseLocationCoords.showLocation();
-                    System.out.println(" Game counter " + instanceCounter);
-                    // rations at 0 need rations to move
+                    System.out.println("You are at Location Point " + miles);
+
+
 
                 }
-                if(echoString == 7) {
-                    instanceCounter++;
+                if(echoString == 4) {
+
                     DatabaseConnection.foodUpdate();
-                }
-                if(echoString == 8) {
-                    instanceCounter++;
                     DatabaseConnection.waterUpdate();
-                }
+                    DatabaseConnection.ammoUpdate();
+                    System.out.println("HQ has Replenished your Troops Supply");
 
-                if(instanceCounter >= 20 ) {
-                    System.out.println("You lost try again");
-                    app.deleteIN(1);
-                    app.deleteLC(1);
+                    DatabaseConnection.showStatus();
 
 
-                    System.exit(0);
                 }
 
                 if (echoString == 0) {

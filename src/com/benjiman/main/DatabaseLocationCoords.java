@@ -52,7 +52,7 @@ public class DatabaseLocationCoords {
         catch (SQLException e) {
             int SQLErrorCode = e.getErrorCode();
             if(SQLErrorCode == 19) {
-                System.out.println("You've completed the game "  + "in " + Echoer.instanceCounter + " moves " + "Exiting...");
+//                System.out.println("You've completed the game "  + "in " + miles + " moves " + "Exiting...");
                 System.exit(0);
             }
         }
@@ -70,7 +70,7 @@ public class DatabaseLocationCoords {
         catch (SQLException e) {
             int SQLErrorCode = e.getErrorCode();
             if(SQLErrorCode == 19) {
-                System.out.println("You've completed the game "  + "in " + Echoer.instanceCounter + " moves " + "Exiting...");
+//                System.out.println("You've completed the game "  + "in " + miles + " moves " + "Exiting...");
                 System.exit(0);
             }
         }
@@ -89,7 +89,7 @@ public class DatabaseLocationCoords {
         catch (SQLException e) {
             int SQLErrorCode = e.getErrorCode();
             if(SQLErrorCode == 19) {
-                System.out.println("You've completed the game "  + "in " + Echoer.instanceCounter + " moves " + "Exiting...");
+//                System.out.println("You've completed the game "  + "in " + miles + " moves " + "Exiting...");
                 System.exit(0);
             }
         }

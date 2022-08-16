@@ -7,8 +7,9 @@
     <list default="true" id="ea440497-cb25-4e47-8958-f6fe709a6f7e" name="Changes" comment="End of day commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TroopTrackerMain.db" beforeDir="false" afterPath="$PROJECT_DIR$/TroopTrackerMain.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseLocationCoords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/DatabaseLocationCoords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/benjiman/main/Echoer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/benjiman/main/Echoer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660475553173</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="End of day commit">
+      <created>1660592714294</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1660592714294</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
